@@ -14,7 +14,7 @@ function Nav() {
     }
     
     return(
-        <header data-testid="header" className="flex-row px-1">
+        <header className="flex-row px-1">
             <h2>
                 <a data-testid="link" href="/">
                     <span role="img" aria-label="camera">📸</span> Oh Snap!
@@ -23,18 +23,18 @@ function Nav() {
             <nav>
                 <ul className="flex-row">
                     <li className="mx-2">
-                        <a data-testid="about" href="#about" onClick={() => handleClick()}>
+                        <a data-testid="about" href="#about" onClick={() => handleClick("About")}>
                             About me
                         </a>
                     </li>
                     <li>
-                        <span onClick={() => handleClick()}>
+                        <span onClick={() => handleClick('Contact')}>
                             Contact
                         </span>
                     </li>
                     {categories.map((category) => (
                         <li className="mx-1" key={category.name} >
-                            <span onClick={() => { handleClick(); }}>
+                            <span onClick={() => { handleClick(category.name); }}>
                                 {capitalizeFirstLetter(category.name)}
                             </span>
                         </li>
